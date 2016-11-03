@@ -1,6 +1,5 @@
 # Portal
-
-**TODO: Add description**
+https://howistart.org/posts/elixir/1
 
 ## Installation
 
@@ -21,4 +20,3 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
       [applications: [:portal]]
     end
     ```
-
