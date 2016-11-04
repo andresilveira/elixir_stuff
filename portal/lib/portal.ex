@@ -40,7 +40,7 @@ defmodule Portal do
   end
   
   @doc """
-  Pushes data to the right in the given `portal`
+  Pushes data from left to right in the given `portal`
   """
   def push_right(portal) do
     # See if we can pop data from the left. If so, push the
@@ -48,6 +48,18 @@ defmodule Portal do
     case Portal.Door.pop(portal.left) do
       :error        -> :ok
       {:ok, value}  -> Portal.Door.push(portal.right, value)
+    end
+    
+    portal
+  end
+  
+  @doc """
+  Pushes data from right to left in the given `portal`.
+  """
+  def push_left(portal) do
+    case Portal.Door.pop(portal.right) do
+      :error        -> :ok
+      {:ok, value}  -> Portal.Door.push(portal.left, value)
     end
     
     portal
