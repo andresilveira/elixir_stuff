@@ -30,7 +30,7 @@ defmodule Portal.Door do
   Returns `{:ok, value}` if there is a value
   or `:error` if the hole is currently empty
   """
-  def pop do
+  def pop(door) do
     Agent.get_and_update(door, fn
       []    -> {:error, []}
       [h|t] -> {{:ok, h}, t}
